@@ -1,56 +1,267 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zorro</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zorro - ACAPRAS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background-color: #f1f1f1;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #006400;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 32px;
+    }
+
+    header h2 {
+      font-size: 18px;
+      margin: 8px 0;
+    }
+
+    header h3 {
+      font-size: 16px;
+      font-weight: normal;
+    }
+
+    header p {
+      font-size: 14px;
+    }
+
+    nav {
+      background-color: #004d00;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+    }
+
+    .nav-active {
+      display: flex;
+      flex-direction: column;
+      background-color: #004d00;
+      padding: 10px 0;
+    }
+
+    section {
+      padding: 40px 20px;
+      background-color: white;
+      margin: 20px auto;
+      max-width: 900px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    section h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: #006400;
+    }
+
+    a {
+      color: #006400;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    #galeria img {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .instagram-media {
+      max-width: 400px;
+      width: 100%;
+      margin: 20px auto !important;
+      display: flex;
+      justify-content: center;
+    }
+
+    #contato p {
+      margin-bottom: 10px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    button {
+      background-color: #006400;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #004d00;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #006400;
+      color: #f1f1f1;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      header h1 {
+        font-size: 24px;
+      }
+
+      section {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>ACAPRAS</h1>
-        <h2>Academia de Capoeira Praia de Salvador</h2>
-        <h3>Formado Zorro</h3>
-        <p>União, Solidariedade e Força Construtora</p>
-    </header>
+  <header>
+    <h1>ACAPRAS</h1>
+    <h2>Academia de Capoeira Praia de Salvador</h2>
+    <h3>Formado Zorro</h3>
+    <p>União, Solidariedade e Força Construtora</p>
+  </header>
 
-    <section id="sobre">
-        <h2>Sobre Nós</h2>
-        <p>A Academia de Capoeira Praia de Salvador (ACAPRAS) foi criada em 24 de novembro de 1980 em Apucarana-PR, por Gideoní Silveira, mais conhecido na capoeira como Mestre Silveira.</p>
-    </section>
+  <nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-links" id="nav-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#aulas">Aulas</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </nav>
 
-    <section id="aulas">
-        <h2>Aulas</h2>
-        <ul>
-            <li>Terça - 19h às 21h - Projeto Griot.ong</li>
-            <li>Sábado - 17h às 19h - Projeto Griot.ong</li>
-        </ul>
-        <p>Rua José Nogueira, 988 - SJP/PR</p>
-        <a href="https://www.google.com/maps/search/?api=1&query=Rua+José+Nogueira+988,+São+José+dos+Pinhais,+PR" target="_blank">Projeto Griot.ong</a>
-    </section>
+  <section id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>A Academia de Capoeira Praia de Salvador (ACAPRAS) foi criada em 24 de novembro de 1980 em Apucarana-PR, por Gideoní Silveira, mais conhecido na capoeira como Mestre Silveira.</p>
+  </section>
 
-    <section id="galeria">
-        <h2>Galeria</h2>
-        <p>Confira fotos e vídeos dos nossos eventos</p>
+  <section id="aulas">
+    <h2>Aulas</h2>
+    <ul>
+      <li>Terça - 19h às 21h - Projeto Griot.ong</li>
+      <li>Sábado - 17h às 19h - Projeto Griot.ong</li>
+    </ul>
+    <p>Rua José Nogueira, 988 - SJP/PR</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Rua+José+Nogueira+988,+São+José+dos+Pinhais,+PR" target="_blank">Ver no mapa</a>
+  </section>
 
-        <!-- Reels incorporado do Instagram -->
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CkzGZq_gDnF/" data-instgrm-version="14" style="margin: auto;"></blockquote>
-        <script async src="//www.instagram.com/embed.js"></script>
+  <section id="galeria">
+    <h2>Galeria</h2>
+    <p>Confira fotos e vídeos dos nossos eventos</p>
+    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CkzGZq_gDnF/" data-instgrm-version="14" style="margin: auto;"></blockquote>
+    <script async src="//www.instagram.com/embed.js"></script>
+    <img src="https://via.placeholder.com/400x200.png?text=Evento+Capoeira" alt="Evento de abertura UniqueCUP 2024">
+  </section>
 
-        <!-- Imagem de exemplo -->
-        <img src="https://via.placeholder.com/400x200.png?text=Evento+Capoeira" alt="Evento de abertura UniqueCUP 2024">
-    </section>
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>WhatsApp: <a href="https://wa.me/5541995061642" target="_blank">Fale conosco</a></p>
+    <p>Instagram: <a href="https://instagram.com/formado_zorro" target="_blank">@formado_zorro</a></p>
+    <p>Email: zorrooficialcapoeira@gmail.com</p>
 
-    <section id="contato">
-        <h2>Contato</h2>
-        <p>WhatsApp: <a href="https://wa.me/5541995061642" target="_blank">Fale conosco</a></p>
-        <p>Instagram: <a href="https://instagram.com/formado_zorro" target="_blank">@formado_zorro</a></p>
-        <p>Email: zorrooficialcapoeira@gmail.com</p>
-    </section>
+    <form action="mailto:zorrooficialcapoeira@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="nome" placeholder="Seu nome" required />
+      <input type="email" name="email" placeholder="Seu email" required />
+      <textarea name="mensagem" rows="4" placeholder="Digite sua mensagem" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 Academia de Capoeira Praia de Salvador. Todos os direitos reservados.</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Academia de Capoeira Praia de Salvador. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-links").classList.toggle("show");
+    }
+  </script>
 </body>
 </html>
