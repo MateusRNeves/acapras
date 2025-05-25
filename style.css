@@ -64,6 +64,15 @@ ul {
     border-radius: 8px;
 }
 
+/* --- ESTILO PARA O REELS INCORPORADO --- */
+.instagram-media {
+    max-width: 400px;
+    width: 100%;
+    margin: 20px auto !important;
+    display: flex;
+    justify-content: center;
+}
+
 #contato p {
     margin-bottom: 10px;
 }
@@ -95,5 +104,9 @@ footer {
 
     #galeria img {
         max-width: 300px;
+    }
+
+    .instagram-media {
+        margin: 20px;
     }
 }
