@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: #f1f1f1;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #006400;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  font-size: 32px;
+}
+
+header h2 {
+  font-size: 18px;
+  margin: 8px 0;
+}
+
+header h3 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+header p {
+  font-size: 14px;
+}
+
+nav {
+  background-color: #004d00;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px 0;
+}
+
+.nav-active {
+  display: flex;
+  flex-direction: column;
+  background-color: #004d00;
+  padding: 10px 0;
+}
+
+section {
+  padding: 40px 20px;
+  background-color: white;
+  margin: 20px auto;
+  max-width: 900px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #006400;
+}
+
+a {
+  color: #006400;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+#galeria img {
+  width: 100%;
+  max-width: 300px;
+  margin: 10px auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.instagram-media {
+  max-width: 400px;
+  width: 100%;
+  margin: 20px auto !important;
+  display: flex;
+  justify-content: center;
+}
+
+#contato p {
+  margin-bottom: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+input, textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-family: 'Poppins', sans-serif;
+}
+
+button {
+  background-color: #006400;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #004d00;
+}
+
+footer {
+  text-align: center;
+  background-color: #006400;
+  color: #f1f1f1;
+  padding: 20px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  section {
+    padding: 20px;
+  }
+}
